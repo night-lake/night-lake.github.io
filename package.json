@@ -1,0 +1,40 @@
+{
+  "name": "sadie-katherine",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "rm -rf node_modules/.cache && rm -rf docs && next build && next export && touch out/.nojekyll && touch out/CNAME && echo \"sadie.is-a.dev\" >> out/CNAME && mv out docs && git add docs/ && git commit -m \"Deploy Next.js to gh-pages\""
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.2",
+    "@types/node": "17.0.18",
+    "@types/react": "17.0.39",
+    "@types/twemoji": "^12.1.2",
+    "autoprefixer": "^10.4.2",
+    "classnames": "^2.3.1",
+    "date-fns": "^2.28.0",
+    "gray-matter": "^4.0.3",
+    "next": "12.0.10",
+    "postcss": "^8.4.6",
+    "postcss-import": "^14.0.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-markdown": "^8.0.0",
+    "remark": "^14.0.2",
+    "remark-gfm": "^3.0.1",
+    "remark-html": "^15.0.1",
+    "remark-twemoji": "^0.1.1",
+    "tailwindcss": "^3.0.23",
+    "twemoji": "^13.1.0",
+    "typescript": "4.5.5"
+  },
+  "devDependencies": {
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.0.10",
+    "prettier-plugin-tailwindcss": "^0.1.8"
+  }
+}
