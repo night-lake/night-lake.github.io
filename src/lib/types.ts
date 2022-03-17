@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconTree, IconType } from 'react-icons/lib';
+import { IconType } from 'react-icons/lib';
 import { ReactElement } from 'react-markdown/lib/react-markdown';
 
 // Markdown Objects
@@ -32,16 +32,14 @@ export interface IconData {
 	sort: string;
 }
 
-export interface AboutContent {
-	title: string;
-	icon: React.ReactElement;
-	content: string[];
-	joinKey?: string;
-}
-
 export interface AboutData {
 	title: string;
-	content: AboutContent[];
+	content: {
+		title: string;
+		icon: IconType;
+		content: string[];
+		joinKey?: string;
+	}[];
 }
 
 export interface TabItemData {
@@ -69,7 +67,7 @@ export interface ProjectProps {
 }
 
 export interface ItemListProps {
-	icon: ReactElement;
+	icon: IconType;
 	title: string;
 	content: string[];
 	joinKey?: string;

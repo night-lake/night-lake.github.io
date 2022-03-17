@@ -13,18 +13,18 @@ export default function About() {
 		{
 			title: 'Who Am I?',
 			content: [
-				{ title: 'Names', icon: <FaSignature />, content: ['Sadie', 'Scarlett', 'Skye'] },
-				{ title: 'Pronouns', icon: <FaTags />, content: ['She', 'They'], joinKey: '/' },
-				{ title: 'Attraction Layer Cake', icon: <FaLayerGroup />, content: ['rC5'], joinKey: '' }
+				{ title: 'Names', icon: FaSignature, content: ['Sadie', 'Scarlett', 'Skye'] },
+				{ title: 'Pronouns', icon: FaTags, content: ['She', 'They'], joinKey: '/' },
+				{ title: 'Attraction Layer Cake', icon: FaLayerGroup, content: ['rC5'], joinKey: '' }
 			]
 		},
 		{
 			title: 'Words',
 			content: [
-				{ title: 'Yes', icon: <FaHeart />, content: ['Ms', 'No Honorific', 'Girl', 'Sis'] },
-				{ title: 'Ok', icon: <FaThumbsUp />, content: ['Boo', 'Kissmate', 'Beloved'] },
-				{ title: 'Jokingly', icon: <FaGrinTongue />, content: ['Pretty', 'Cute'] },
-				{ title: "Only if we're close", icon: <FaUsers />, content: ['Wife', 'Girlfriend'] }
+				{ title: 'Yes', icon: FaHeart, content: ['Ms', 'No Honorific', 'Girl', 'Sis'] },
+				{ title: 'Ok', icon: FaThumbsUp, content: ['Boo', 'Kissmate', 'Beloved'] },
+				{ title: 'Jokingly', icon: FaGrinTongue, content: ['Pretty', 'Cute'] },
+				{ title: "Only if we're close", icon: FaUsers, content: ['Wife', 'Girlfriend'] }
 			]
 		}
 	];
