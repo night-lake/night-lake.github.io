@@ -1,14 +1,11 @@
 import { format } from 'date-fns';
-import { IconContext } from 'react-icons';
 import {
 	FaCodepen,
-	FaDiscord,
-	FaGithub,
+	FaDiscord, FaEnvelope, FaGithub,
 	FaReddit,
 	FaStackOverflow,
 	FaTwitter,
-	FaYoutube,
-	FaEnvelope
+	FaYoutube
 } from 'react-icons/fa';
 import { IconData } from '../lib/types';
 import IconButton from './IconButton';

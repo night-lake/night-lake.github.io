@@ -12,7 +12,7 @@ export default function ItemList(props: ItemListProps) {
 						if (a > b) return 1;
 						return 0;
 					})
-					.join(props.joinKey)}
+					.join(props.joinKey ?? ', ')}
 			</p>
 		</div>
 	);

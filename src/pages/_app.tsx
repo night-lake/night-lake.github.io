@@ -1,6 +1,5 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { IconContext } from 'react-icons';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import '../styles/globals.css';

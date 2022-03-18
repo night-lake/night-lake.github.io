@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import { GenIcon, IconContext } from 'react-icons';
-import { FaGlobe, FaGrinTongue, FaHeart, FaLayerGroup, FaSignature, FaTags, FaThumbsUp, FaUsers } from 'react-icons/fa';
+import { FaGrinTongue, FaHeart, FaLayerGroup, FaSignature, FaTags, FaThumbsUp, FaUsers } from 'react-icons/fa';
 import ContentBlock from '../components/ContentBlock';
 import GoBack from '../components/GoBack';
 import ItemList from '../components/ItemList';
@@ -38,19 +37,13 @@ export default function About() {
 
 			<GoBack />
 
-			<IconContext.Provider
-				value={{
-					className: 'text-xl text-gray-600 dark:text-gray-300 align-middle'
-				}}
-			>
-				{about.map(item => (
-					<ContentBlock title={item.title} key={item.title}>
-						{item.content.map(contentItem => (
-							<ItemList {...contentItem} key={contentItem.title} />
-						))}
-					</ContentBlock>
-				))}
-			</IconContext.Provider>
+			{about.map(item => (
+				<ContentBlock title={item.title} key={item.title}>
+					{item.content.map(contentItem => (
+						<ItemList {...contentItem} key={contentItem.title} />
+					))}
+				</ContentBlock>
+			))}
 
 			<Skills />
 		</>

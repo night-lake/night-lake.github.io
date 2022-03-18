@@ -38,7 +38,7 @@ export default function Skills() {
 					<button
 						key={skillHead.title}
 						className={classNames('flex flex-col items-center', 'group', 'rounded-lg p-2 transition-all', {
-							'bg-white/50 dark:bg-neutral-800': skillHead.title.toLowerCase() === display
+							'bg-white dark:bg-neutral-800': skillHead.title.toLowerCase() === display
 						})}
 						onClick={() => setDisplay(skillHead.title.toLowerCase())}
 					>
@@ -60,7 +60,7 @@ export default function Skills() {
 					tabData[display].map(skill => (
 						<li
 							key={skill.name}
-							className="flex rounded-xl px-4 py-4 shadow-md dark:bg-neutral-800/80 dark:text-white"
+							className="flex rounded-xl bg-white p-4 shadow-md dark:bg-neutral-800/80 dark:text-white"
 						>
 							<skill.icon className="text-3xl" />
 							<p className="pl-2 font-medium">{skill.name}</p>
