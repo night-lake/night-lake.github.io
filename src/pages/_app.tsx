@@ -11,8 +11,8 @@ export default function App({ Component, pageProps }: AppProps) {
 				<meta name="og:image" content="https://us-east-1.tixte.net/uploads/nightlake.tixte.co/sadie.png" />
 				<meta name="theme-color" content="#FFAEBD" />
 			</Head>
-			<div className="background">
-				<div className="trans"></div>
+			<div className="bg-[#55cdfc]">
+				<div className="trans mx-auto h-2 max-w-4xl px-4"></div>
 			</div>
 			<div className="mx-auto max-w-4xl px-4">
 				<Header />

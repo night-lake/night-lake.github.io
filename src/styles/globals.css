@@ -46,10 +46,6 @@ body {
 		var(--bg);
 }
 
-.background {
-	background: #55cdfc;
-}
-
 .trans {
 	@apply mx-auto h-2 max-w-4xl px-4;
 
