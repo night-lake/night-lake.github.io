@@ -1,15 +1,12 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { FaArrowRight, FaHeart, FaIdBadge, FaSignature, FaTags, FaThumbsUp } from 'react-icons/fa';
 import Post from '../components/Post';
-import ItemList from '../components/ItemList';
 import Project from '../components/Project';
 import Section from '../components/Section';
 import SeeMore from '../components/SeeMore';
+import Skills from '../components/Skills';
 import { desc, projects } from '../lib/constants';
 import { getSortedPostsData } from '../lib/posts';
 import { HomeProps, MarkdownData, ProjectData } from '../lib/types';
-import Skills from '../components/Skills';
 
 export async function getStaticProps() {
 	const posts = getSortedPostsData();
@@ -25,24 +22,20 @@ export async function getStaticProps() {
 	};
 }
 
+function split<T>(arr: T[]): T[][] {
+	return arr.reduce((resultArray: T[][], item, index) => {
+		const chunkIndex = Math.floor(index / 3);
+
+		if (!resultArray[chunkIndex]) resultArray[chunkIndex] = [];
+		resultArray[chunkIndex].push(item);
+
+		return resultArray;
+	}, []);
+}
+
 export default function Home({ posts, projects }: HomeProps) {
-	const firstFewPosts = posts.reduce((resultArray: MarkdownData[][], item, index) => {
-		const chunkIndex = Math.floor(index / 3);
-
-		if (!resultArray[chunkIndex]) resultArray[chunkIndex] = [];
-		resultArray[chunkIndex].push(item);
-
-		return resultArray;
-	}, []);
-
-	const firstFewProjects = projects.reduce((resultArray: ProjectData[][], item, index) => {
-		const chunkIndex = Math.floor(index / 3);
-
-		if (!resultArray[chunkIndex]) resultArray[chunkIndex] = [];
-		resultArray[chunkIndex].push(item);
-
-		return resultArray;
-	}, []);
+	const firstFewPosts = split<MarkdownData>(posts);
+	const firstFewProjects = split<ProjectData>(projects);
 
 	return (
 		<>
