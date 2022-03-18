@@ -33,28 +33,24 @@ export default function Skills() {
 
 	return (
 		<Section title="Stuff I know">
-			<div className="grid grid-cols-2 rounded-lg bg-white/75 dark:bg-neutral-800/25 md:grid-cols-4">
+			<div className="flex flex-row space-x-2">
 				{tabTitles.map(skillHead => (
 					<button
 						key={skillHead.title}
-						className={classNames(
-							'flex flex-row items-center',
-							' hover:border-b-2 hover:border-pink-500',
-							'rounded-lg p-2 transition-all',
-							{
-								'border-b-2 border-pink-600 bg-white/50 dark:bg-neutral-800':
-									skillHead.title.toLowerCase() === display
-							}
-						)}
+						className={classNames('flex flex-col items-center', 'group', 'rounded-lg p-2 transition-all', {
+							'bg-white/50 dark:bg-neutral-800': skillHead.title.toLowerCase() === display
+						})}
 						onClick={() => setDisplay(skillHead.title.toLowerCase())}
 					>
 						{
 							<skillHead.icon
 								title={skillHead.title}
-								className="text-2xl text-gray-600 dark:text-gray-300"
+								className="text-2xl text-gray-600 transition-all group-hover:text-pink-500 dark:text-gray-300"
 							/>
 						}
-						<p className="ml-2 font-medium text-gray-600 dark:text-gray-300">{skillHead.title}</p>
+						<p className="font-medium text-gray-600 transition-all group-hover:text-pink-500 dark:text-gray-300">
+							{skillHead.title}
+						</p>
 					</button>
 				))}
 			</div>
