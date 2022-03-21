@@ -33,8 +33,8 @@ export default function Posts({ allPostsData }: Record<string, MarkdownData[]>) 
 			<GoBack />
 
 			{postsByDate.map((postChunk, index) => (
-				<Section title={postChunk.year} key={index}>
-					<ul className="grid gap-2 py-2 lg:grid-cols-2 xl:grid-cols-3">
+				<Section title={postChunk.year} key={index} topMargin={index === 0 ? true : false}>
+					<ul className="grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
 						{postChunk.posts.map(post => (
 							<Post post={post} key={post.id} />
 						))}

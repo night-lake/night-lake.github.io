@@ -85,5 +85,5 @@ export interface IconButtonProps {
 export interface SectionProps {
 	title: string;
 	children: React.ReactNode;
-	pink?: boolean;
+	topMargin?: boolean;
 }

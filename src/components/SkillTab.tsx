@@ -10,18 +10,24 @@ export default function SkillTab(
 ) {
 	return (
 		<button
-			className={classNames('flex flex-col items-center', 'group', 'rounded-lg p-2 transition-all', {
-				'bg-white dark:bg-neutral-800': props.title.toLowerCase() === props.get
-			})}
+			className="group flex flex-col items-center transition-all"
 			onClick={() => props.set(props.title.toLowerCase())}
 		>
 			{
 				<props.icon
 					title={props.title}
-					className="text-2xl text-gray-600 transition-all group-hover:text-pink-500 dark:text-gray-300"
+					className={classNames('text-2xl transition-all group-hover:text-pink-500', {
+						'text-gray-600 dark:text-gray-300': props.title.toLowerCase() !== props.get,
+						'text-pink-600': props.title.toLowerCase() === props.get
+					})}
 				/>
 			}
-			<p className="font-medium text-gray-600 transition-all group-hover:text-pink-500 dark:text-gray-300">
+			<p
+				className={classNames('font-medium transition-all group-hover:text-pink-500', {
+					'text-gray-600 dark:text-gray-300': props.title.toLowerCase() !== props.get,
+					'text-pink-600': props.title.toLowerCase() === props.get
+				})}
+			>
 				{props.title}
 			</p>
 		</button>

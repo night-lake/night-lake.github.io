@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { FaArrowLeft } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Date from '../../components/Date';

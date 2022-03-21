@@ -13,7 +13,7 @@ export default function PageIsNull() {
 
 			<GoBack />
 
-			<Section title="That wasn't found" pink={true}>
+			<Section title="That wasn't found" topMargin={true}>
 				<p className="text-lg dark:text-white">
 					Either Sadie sucks at typing or you messed with the URL. It&#39;s probably the first one.
 				</p>

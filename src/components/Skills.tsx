@@ -4,6 +4,7 @@ import { FaBatteryEmpty, FaCloud, FaDatabase, FaGlobe, FaHammer } from 'react-ic
 import {
 	SiCss3,
 	SiGit,
+	SiGithubactions,
 	SiNextdotjs,
 	SiNodedotjs,
 	SiPostgresql,
@@ -39,7 +40,7 @@ export default function Skills() {
 			{ name: 'TypeScript', icon: SiTypescript },
 			{ name: 'PostgreSQL', icon: SiPostgresql }
 		],
-		devops: [],
+		devops: [{ name: 'Github Actions', icon: SiGithubactions }],
 		tools: [{ name: 'Git', icon: SiGit }]
 	};
 
@@ -47,18 +48,16 @@ export default function Skills() {
 
 	return (
 		<Section title="Stuff I know">
-			<div className="flex flex-row space-x-2">
+			<div className="mb-2 flex flex-row space-x-4">
 				{tabTitles.map(item => (
 					<SkillTab key={item.title} set={setDisplay} get={display} {...item} />
 				))}
 			</div>
 
 			<ul className="grid gap-2 py-2 lg:grid-cols-2 xl:grid-cols-4 ">
-				{current.length > 0 ? (
-					current.map(skill => <SkillTabItem {...skill} key={skill.name} />)
-				) : (
-					<SkillTabItem icon={FaBatteryEmpty} name="None Yet" />
-				)}
+				{current.map(skill => (
+					<SkillTabItem {...skill} key={skill.name} />
+				))}
 			</ul>
 		</Section>
 	);

@@ -45,7 +45,7 @@ export default function Home({ posts, projects }: HomeProps) {
 			</Head>
 
 			<Section title="Projects">
-				<ul className="grid gap-2 py-2 lg:grid-cols-2 xl:grid-cols-3">
+				<ul className="mb-4 grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
 					{firstFewProjects[0].map(project => (
 						<Project project={project} key={project.name} />
 					))}
@@ -57,7 +57,7 @@ export default function Home({ posts, projects }: HomeProps) {
 			<Skills />
 
 			<Section title="Recent Posts">
-				<ul className="grid gap-2 py-2 lg:grid-cols-2 xl:grid-cols-3">
+				<ul className="mb-4 grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
 					{firstFewPosts[0].map(post => (
 						<Post post={post} key={post.id} />
 					))}

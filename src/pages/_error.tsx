@@ -13,7 +13,7 @@ export default function Error() {
 
 			<GoBack />
 
-			<Section title="Well...." pink={true}>
+			<Section title="Well...." topMargin={true}>
 				<p className="text-lg dark:text-white">
 					It seems like an <a href="https://ian-deploy.xyz">Ian Deploy</a> has infilterated.
 				</p>
