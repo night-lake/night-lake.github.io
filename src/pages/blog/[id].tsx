@@ -25,7 +25,8 @@ export default function PostPage({ source }: { source: MDXRemoteSerializeResult<
 			</Head>
 			<GoBack />
 			<section className="py-4">
-				<h1 className="text-2xl font-bold dark:text-white">{source.frontmatter?.postTitle}</h1>
+				<h1 className="text-2xl font-bold text-pink-500">{source.frontmatter?.postTitle}</h1>
+				<p className="mb-3 dark:text-white">{source.frontmatter?.description}</p>
 				<p className="font-medium text-gray-600 dark:text-gray-400">
 					<Date dateString={source.frontmatter?.date ?? '1970-01-01'} />
 				</p>
