@@ -5,14 +5,13 @@ import Section from '../components/Section';
 import SeeMore from '../components/SeeMore';
 import Skills from '../components/Skills';
 import { desc, projects } from '../lib/constants';
-import { getSortedPostsData } from '../lib/posts';
+import { getAllPostIds, getSortedPostsData } from '../lib/posts';
 import { HomeProps, MarkdownData, ProjectData } from '../lib/types';
 
 export async function getStaticProps() {
-	const posts = getSortedPostsData();
 	return {
 		props: {
-			posts,
+			posts: getSortedPostsData(),
 			projects: projects.sort((a, b) => {
 				if (a.name < b.name) return -1;
 				if (a.name > b.name) return 1;
@@ -34,8 +33,8 @@ function split<T>(arr: T[]): T[][] {
 }
 
 export default function Home({ posts, projects }: HomeProps) {
-	const firstFewPosts = split<MarkdownData>(posts);
 	const firstFewProjects = split<ProjectData>(projects);
+	const firstFewPosts = split<MarkdownData>(posts);
 
 	return (
 		<>
@@ -57,7 +56,7 @@ export default function Home({ posts, projects }: HomeProps) {
 			<Skills />
 
 			<Section title="Recent Posts">
-				<ul className="mb-4 grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
+				<ul className="grid gap-2 py-2 lg:grid-cols-2 xl:grid-cols-3">
 					{firstFewPosts[0].map(post => (
 						<Post post={post} key={post.id} />
 					))}

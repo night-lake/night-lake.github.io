@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import { IconType } from 'react-icons/lib';
-import { ReactElement } from 'react-markdown/lib/react-markdown';
 
 // Markdown Objects
 export interface MarkdownData {
 	id: string;
 	date: string;
-	title: string;
+	postTitle: string;
 	description: string;
-	content?: string;
 }
 
 export interface DateBasedObject {
@@ -27,9 +25,10 @@ export interface ProjectData {
 }
 
 export interface IconData {
-	url: string;
+	url?: string;
 	icon: IconType;
 	sort: string;
+	action?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export interface AboutData {

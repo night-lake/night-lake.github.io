@@ -2,10 +2,10 @@ import GoBack from '../../components/GoBack';
 import Post from '../../components/Post';
 import Section from '../../components/Section';
 import { getSortedPostsData } from '../../lib/posts';
-import { DateBasedObject as DateBasedObject, MarkdownData } from '../../lib/types';
+import { DateBasedObject, MarkdownData } from '../../lib/types';
 
 export async function getStaticProps() {
-	const allPostsData = getSortedPostsData();
+	const allPostsData = await getSortedPostsData();
 	return {
 		props: {
 			allPostsData
@@ -13,7 +13,7 @@ export async function getStaticProps() {
 	};
 }
 
-export default function Posts({ allPostsData }: Record<string, MarkdownData[]>) {
+export default function BlogHome({ allPostsData }: Record<string, MarkdownData[]>) {
 	const postsByDate = allPostsData.reduce((resultArray: DateBasedObject[], item) => {
 		let yearIndex = 0;
 		const [year] = item.date.split('-');
@@ -33,8 +33,8 @@ export default function Posts({ allPostsData }: Record<string, MarkdownData[]>) 
 			<GoBack />
 
 			{postsByDate.map((postChunk, index) => (
-				<Section title={postChunk.year} key={index} topMargin={index === 0 ? true : false}>
-					<ul className="grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
+				<Section title={postChunk.year} key={index} topMargin={index === 0}>
+					<ul className="grid gap-2 py-2 lg:grid-cols-2 xl:grid-cols-3">
 						{postChunk.posts.map(post => (
 							<Post post={post} key={post.id} />
 						))}

@@ -4,7 +4,7 @@ import IconButton from './IconButton';
 
 export default function Project({ project }: ProjectProps) {
 	return (
-		<li className="flex flex-col content-center overflow-hidden rounded-xl bg-white p-2 transition-all dark:bg-neutral-800/90">
+		<li className="flex flex-col content-center rounded-xl bg-white p-2 transition-all dark:bg-neutral-800/90">
 			<div className="m-auto">
 				<img className="h-48 w-48 rounded-full" alt="" src={project.icon} />
 			</div>
