@@ -1,18 +1,23 @@
 import { format } from 'date-fns';
+import { useTheme } from 'next-themes';
 import { useState } from 'react';
 import {
 	FaCodepen,
 	FaDiscord,
 	FaEnvelope,
 	FaGithub,
+	FaMoon,
 	FaReddit,
 	FaStackOverflow,
+	FaSun,
 	FaTwitter,
 	FaYoutube
 } from 'react-icons/fa';
 import { IconData } from '../lib/types';
 
 const Footer: React.FC = () => {
+	const { resolvedTheme, setTheme } = useTheme();
+
 	const [showDiscord, setDiscord] = useState(false);
 	let classname = 'cursor-pointer text-3xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300';
 
@@ -61,17 +66,34 @@ const Footer: React.FC = () => {
 					);
 				})}
 			</div>
-			<p className="pb-3 text-center font-semibold text-gray-700 dark:text-gray-300">
-				&copy; Sadie Mae Katherine {format(Date.now(), 'yyyy')}.{' '}
-				<a
-					href="https://github.com/night-lake/night-lake.github.io"
-					className="font-bold text-pink-500 hover:text-pink-600"
-				>
-					View source.
-				</a>
-			</p>
+			<div className="flex flex-row content-center justify-between">
+				<p className="pb-3 text-center font-semibold text-gray-700 dark:text-gray-300">
+					&copy; Sadie Mae Katherine {format(Date.now(), 'yyyy')}.{' '}
+					<a
+						href="https://github.com/night-lake/night-lake.github.io"
+						className="font-bold text-pink-500 hover:text-pink-600"
+					>
+						View source.
+					</a>
+				</p>
+				<button onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
+					{resolvedTheme === 'dark' ? (
+						<FaMoon
+							className={
+								'cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300'
+							}
+						/>
+					) : (
+						<FaSun
+							className={
+								'cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300'
+							}
+						/>
+					)}
+				</button>
+			</div>
 		</footer>
 	);
-}
+};
 
 export default Footer;

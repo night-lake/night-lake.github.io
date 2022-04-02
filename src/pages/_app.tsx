@@ -1,3 +1,4 @@
+import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import Footer from '../components/Footer';
@@ -6,7 +7,7 @@ import '../styles/globals.css';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 	return (
-		<>
+		<ThemeProvider attribute="class" value={{ dark: 'dark', light: 'light' }}>
 			<Head>
 				<meta name="og:image" content="https://us-east-1.tixte.net/uploads/nightlake.tixte.co/sadie.png" />
 				<meta name="theme-color" content="#FFAEBD" />
@@ -21,7 +22,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 				</main>
 				<Footer />
 			</div>
-		</>
+		</ThemeProvider>
 	);
 };
 
