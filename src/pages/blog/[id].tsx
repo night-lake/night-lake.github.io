@@ -1,3 +1,4 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import Head from 'next/head';
@@ -5,19 +6,19 @@ import Date from '../../components/Date';
 import GoBack from '../../components/GoBack';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
-export async function getStaticProps({ params }: Record<string, { id: string; fileContents: string }>) {
-	const mdxSource = await serialize(await getPostData(params.id), { parseFrontmatter: true });
+export const getStaticProps = async ({ params }: { params: { id: string; fileContents: string } }) => {
+	const mdxSource = await serialize(await getPostData(params?.id ?? ''), { parseFrontmatter: true });
 	return { props: { source: mdxSource } };
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = () => {
 	return {
 		paths: getAllPostIds(),
 		fallback: false
 	};
-}
+};
 
-export default function PostPage({ source }: { source: MDXRemoteSerializeResult<Record<string, unknown>> }) {
+const PostPage: React.FC<{ source: MDXRemoteSerializeResult<Record<string, unknown>> }> = ({ source }) =>{
 	return (
 		<>
 			<Head>
@@ -37,3 +38,5 @@ export default function PostPage({ source }: { source: MDXRemoteSerializeResult<
 		</>
 	);
 }
+
+export default PostPage;

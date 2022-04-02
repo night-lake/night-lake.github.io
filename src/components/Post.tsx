@@ -1,8 +1,10 @@
 import Link from 'next/link';
-import { PostProps } from '../lib/types';
+import { MarkdownData } from '../lib/types';
 import Date from './Date';
 
-export default function Post({ post }: PostProps) {
+const Post: React.FC<{
+	post: MarkdownData;
+}> = ({ post }) => {
 	return (
 		<ul className="rounded-xl bg-white p-2 transition-all hover:shadow-md dark:bg-neutral-800/80 dark:shadow-lg">
 			<Link href={`/blog/${post.id}`} passHref>
@@ -14,4 +16,6 @@ export default function Post({ post }: PostProps) {
 			</Link>
 		</ul>
 	);
-}
+};
+
+export default Post;

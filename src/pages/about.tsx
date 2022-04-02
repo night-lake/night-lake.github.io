@@ -7,7 +7,7 @@ import Skills from '../components/Skills';
 import { desc } from '../lib/constants';
 import { AboutData } from '../lib/types';
 
-export default function About() {
+const About: React.FC = () => {
 	const about: AboutData[] = [
 		{
 			title: 'Who Am I?',
@@ -49,3 +49,5 @@ export default function About() {
 		</>
 	);
 }
+
+export default About;

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 import { desc } from '../lib/constants';
 
-function Header() {
+const Header: React.FC = () => {
 	return (
 		<header className="mb-4 flex flex-col content-center justify-center md:flex-row md:justify-start">
 			<div className="py-4 md:m-0 md:px-4">

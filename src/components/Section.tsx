@@ -1,7 +1,10 @@
 import classNames from 'classnames';
-import { SectionProps } from '../lib/types';
 
-export default function Section({ title, children, topMargin = false }: SectionProps) {
+const  Section: React.FC<{
+	title: string;
+	children: React.ReactNode;
+	topMargin?: boolean;
+}> = ({ title, children, topMargin = false }) => {
 	return (
 		<section
 			className={classNames({
@@ -14,3 +17,5 @@ export default function Section({ title, children, topMargin = false }: SectionP
 		</section>
 	);
 }
+
+export default Section;

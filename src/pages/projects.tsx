@@ -3,9 +3,9 @@ import GoBack from '../components/GoBack';
 import Project from '../components/Project';
 import Section from '../components/Section';
 import { projects } from '../lib/constants';
-import { ProjectPageProps } from '../lib/types';
+import { ProjectData } from '../lib/types';
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
 	return {
 		props: {
 			projects: projects.sort((a, b) => {
@@ -15,9 +15,11 @@ export async function getStaticProps() {
 			})
 		}
 	};
-}
+};
 
-export default function Projects({ projects }: ProjectPageProps) {
+const Projects: React.FC<{
+	projects: ProjectData[];
+}> = ({ projects }) => {
 	return (
 		<>
 			<Head>
@@ -39,4 +41,6 @@ export default function Projects({ projects }: ProjectPageProps) {
 			</Section>
 		</>
 	);
-}
+};
+
+export default Projects;

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 
-export default function SeeMore({ url }: Record<string, string>) {
+const SeeMore: React.FC<{ url: string }> = ({ url }) => {
 	return (
 		<Link href={url} passHref>
 			<a className="text-md cursor-pointer font-medium text-pink-500 hover:text-pink-600">
@@ -12,4 +12,6 @@ export default function SeeMore({ url }: Record<string, string>) {
 			</a>
 		</Link>
 	);
-}
+};
+
+export default SeeMore;

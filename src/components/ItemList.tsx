@@ -1,6 +1,11 @@
-import { ItemListProps } from '../lib/types';
+import { IconType } from 'react-icons';
 
-export default function ItemList(props: ItemListProps) {
+const ItemList: React.FC<{
+	icon: IconType;
+	title: string;
+	content: string[];
+	joinKey?: string;
+}> = props => {
 	return (
 		<div className="flex flex-row content-center items-center space-x-2 py-2">
 			<props.icon className="text-xl text-gray-600 dark:text-gray-300" />
@@ -16,4 +21,6 @@ export default function ItemList(props: ItemListProps) {
 			</p>
 		</div>
 	);
-}
+};
+
+export default ItemList;

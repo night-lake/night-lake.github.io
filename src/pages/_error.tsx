@@ -1,10 +1,8 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { FaArrowLeft } from 'react-icons/fa';
 import GoBack from '../components/GoBack';
 import Section from '../components/Section';
 
-export default function Error() {
+const Error: React.FC = () => {
 	return (
 		<>
 			<Head>
@@ -20,4 +18,6 @@ export default function Error() {
 			</Section>
 		</>
 	);
-}
+};
+
+export default Error;

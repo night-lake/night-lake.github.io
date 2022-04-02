@@ -6,9 +6,9 @@ import SeeMore from '../components/SeeMore';
 import Skills from '../components/Skills';
 import { desc, projects } from '../lib/constants';
 import { getAllPostIds, getSortedPostsData } from '../lib/posts';
-import { HomeProps, MarkdownData, ProjectData } from '../lib/types';
+import {  MarkdownData, ProjectData } from '../lib/types';
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
 	return {
 		props: {
 			posts: getSortedPostsData(),
@@ -19,7 +19,7 @@ export async function getStaticProps() {
 			})
 		}
 	};
-}
+};
 
 function split<T>(arr: T[]): T[][] {
 	return arr.reduce((resultArray: T[][], item, index) => {
@@ -32,7 +32,10 @@ function split<T>(arr: T[]): T[][] {
 	}, []);
 }
 
-export default function Home({ posts, projects }: HomeProps) {
+const Home: React.FC<{
+	projects: ProjectData[];
+	posts: MarkdownData[];
+}> = ({ posts, projects }) => {
 	const firstFewProjects = split<ProjectData>(projects);
 	const firstFewPosts = split<MarkdownData>(posts);
 
@@ -66,4 +69,6 @@ export default function Home({ posts, projects }: HomeProps) {
 			</Section>
 		</>
 	);
-}
+};
+
+export default Home;

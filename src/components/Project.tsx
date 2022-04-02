@@ -1,8 +1,9 @@
 import { FaGithub, FaGlobe, FaLayerGroup } from 'react-icons/fa';
-import { ProjectProps } from '../lib/types';
-import IconButton from './IconButton';
+import { ProjectData } from '../lib/types';
 
-export default function Project({ project }: ProjectProps) {
+const Project: React.FC<{
+	project: ProjectData;
+}> = ({ project }) => {
 	return (
 		<li className="flex flex-col content-center rounded-xl bg-white p-2 transition-all dark:bg-neutral-800/90">
 			<div className="m-auto">
@@ -26,26 +27,22 @@ export default function Project({ project }: ProjectProps) {
 					</p>
 				</div>
 				<div className="flex flex-row content-center justify-end space-x-2">
-					<IconButton
-						link={project.website}
-						icon={
-							<FaGlobe
-								title={`${project.name}'s website`}
-								className="cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300"
-							/>
-						}
-					/>
-					<IconButton
-						link={project.repo}
-						icon={
-							<FaGithub
-								title={`${project.name}'s repo`}
-								className="cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300"
-							/>
-						}
-					/>
+					<a className="hover:color-pink-500 transition-all" href={project.website}>
+						<FaGlobe
+							title={`${project.name}'s website`}
+							className="cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300"
+						/>
+					</a>
+					<a className="hover:color-pink-500 transition-all" href={project.repo}>
+						<FaGithub
+							title={`${project.name}'s website`}
+							className="cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300"
+						/>
+					</a>
 				</div>
 			</div>
 		</li>
 	);
-}
+};
+
+export default Project;

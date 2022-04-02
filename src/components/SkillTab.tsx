@@ -1,17 +1,17 @@
 import classNames from 'classnames';
 import { Dispatch, SetStateAction } from 'react';
-import { TabTitle } from '../lib/types';
+import { Display, TabTitle } from '../lib/types';
 
-export default function SkillTab(
-	props: TabTitle & {
-		set: Dispatch<SetStateAction<string>>;
+const SkillTab: React.FC<
+	TabTitle & {
+		set: Dispatch<SetStateAction<Display>>;
 		get: string;
 	}
-) {
+> = props => {
 	return (
 		<button
 			className="group flex flex-col items-center transition-all"
-			onClick={() => props.set(props.title.toLowerCase())}
+			onClick={() => props.set(props.title.toLowerCase() as Display)}
 		>
 			{
 				<props.icon
@@ -32,4 +32,6 @@ export default function SkillTab(
 			</p>
 		</button>
 	);
-}
+};
+
+export default SkillTab;

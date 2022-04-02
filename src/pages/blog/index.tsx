@@ -4,8 +4,9 @@ import Section from '../../components/Section';
 import { getSortedPostsData } from '../../lib/posts';
 import { DateBasedObject, MarkdownData } from '../../lib/types';
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
 	const allPostsData = await getSortedPostsData();
+
 	return {
 		props: {
 			allPostsData
@@ -13,7 +14,7 @@ export async function getStaticProps() {
 	};
 }
 
-export default function BlogHome({ allPostsData }: Record<string, MarkdownData[]>) {
+const BlogHome: React.FC<{ allPostsData: MarkdownData[]}> = ({ allPostsData }) => {
 	const postsByDate = allPostsData.reduce((resultArray: DateBasedObject[], item) => {
 		let yearIndex = 0;
 		const [year] = item.date.split('-');
@@ -44,3 +45,5 @@ export default function BlogHome({ allPostsData }: Record<string, MarkdownData[]
 		</>
 	);
 }
+
+export default BlogHome;

@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fa';
 import { IconData } from '../lib/types';
 
-export default function Footer() {
+const Footer: React.FC = () => {
 	const [showDiscord, setDiscord] = useState(false);
 	let classname = 'cursor-pointer text-3xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300';
 
@@ -73,3 +73,5 @@ export default function Footer() {
 		</footer>
 	);
 }
+
+export default Footer;

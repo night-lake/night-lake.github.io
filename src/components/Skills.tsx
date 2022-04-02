@@ -1,6 +1,5 @@
-import classNames from 'classnames';
 import { useState } from 'react';
-import { FaBatteryEmpty, FaCloud, FaDatabase, FaGlobe, FaHammer } from 'react-icons/fa';
+import { FaCloud, FaDatabase, FaGlobe, FaHammer } from 'react-icons/fa';
 import {
 	SiCss3,
 	SiGit,
@@ -12,13 +11,14 @@ import {
 	SiTailwindcss,
 	SiTypescript
 } from 'react-icons/si';
-import { TabItemData, TabTitle } from '../lib/types';
+import { Display, TabItemData, TabTitle } from '../lib/types';
 import Section from './Section';
 import SkillTab from './SkillTab';
 import SkillTabItem from './SkillTabItem';
 
-export default function Skills() {
-	const [display, setDisplay] = useState('frontend');
+
+const Skills: React.FC = () => {
+	const [display, setDisplay] = useState<Display>('frontend');
 
 	const tabTitles: TabTitle[] = [
 		{ title: 'Frontend', icon: FaGlobe },
@@ -27,7 +27,7 @@ export default function Skills() {
 		{ title: 'Tools', icon: FaHammer }
 	];
 
-	const tabData: Record<string, TabItemData[]> = {
+	const tabData: Record<Display, TabItemData[]> = {
 		frontend: [
 			{ name: 'Next.js', icon: SiNextdotjs },
 			{ name: 'React', icon: SiReact },
@@ -61,4 +61,6 @@ export default function Skills() {
 			</ul>
 		</Section>
 	);
-}
+};
+
+export default Skills;

@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react';
 import { IconType } from 'react-icons/lib';
 
 // Markdown Objects
@@ -41,48 +41,14 @@ export interface AboutData {
 	}[];
 }
 
-export interface TabItemData {
-	icon: IconType;
-	name: string;
-}
-
 export interface TabTitle {
 	title: string;
 	icon: IconType;
 }
 
-// Props
-export interface HomeProps {
-	projects: ProjectData[];
-	posts: MarkdownData[];
-}
-export interface PostProps {
-	post: MarkdownData;
-	key: string;
-}
-
-export interface ProjectProps {
-	project: ProjectData;
-}
-
-export interface ItemListProps {
+export interface TabItemData {
 	icon: IconType;
-	title: string;
-	content: string[];
-	joinKey?: string;
+	name: string;
 }
 
-export interface ProjectPageProps {
-	projects: ProjectData[];
-}
-
-export interface IconButtonProps {
-	link: string;
-	icon: React.ReactElement;
-}
-
-export interface SectionProps {
-	title: string;
-	children: React.ReactNode;
-	topMargin?: boolean;
-}
+export type Display = 'frontend' | 'backend' | 'devops' | 'tools';

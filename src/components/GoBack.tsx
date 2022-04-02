@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 
-export default function GoBack() {
+const GoBack: React.FC = () => {
 	return (
 		<Link href="/" passHref>
 			<a className="text-md mb-3 cursor-pointer font-medium text-pink-500 hover:text-pink-600">
@@ -15,3 +15,5 @@ export default function GoBack() {
 		</Link>
 	);
 }
+
+export default GoBack;
