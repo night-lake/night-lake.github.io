@@ -6,7 +6,7 @@ const Error: React.FC = () => {
 	return (
 		<>
 			<Head>
-				<title>Sadie Mae Katherine</title>
+				<title>Amelia Mae Katherine</title>
 			</Head>
 
 			<GoBack />

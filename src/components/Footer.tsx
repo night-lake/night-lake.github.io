@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
 			</div>
 			<div className="flex flex-row content-center justify-between pb-3">
 				<p className="text-center font-semibold text-gray-700 dark:text-gray-300">
-					&copy; Sadie Mae Katherine {format(Date.now(), 'yyyy')}.{' '}
+					&copy; Amelia Mae Katherine {format(Date.now(), 'yyyy')}.{' '}
 					<a
 						href="https://github.com/night-lake/night-lake.github.io"
 						className="font-bold text-pink-500 hover:text-pink-600"

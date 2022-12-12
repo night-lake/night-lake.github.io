@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 				/>
 			</div>
 			<div className="flex flex-col content-center justify-center xl:pl-4">
-				<p className="text-3xl font-extrabold text-pink-600 lg:tracking-wide">Sadie Mae Katherine</p>
+				<p className="text-3xl font-extrabold text-pink-600 lg:tracking-wide">Amelia Mae Katherine</p>
 				<p className="text-md font-semibold text-gray-800 dark:text-gray-300">{desc}</p>
 				<div>
 					<Link href="/about" passHref>
@@ -26,6 +26,6 @@ const Header: React.FC = () => {
 			</div>
 		</header>
 	);
-}
+};
 
 export default Header;

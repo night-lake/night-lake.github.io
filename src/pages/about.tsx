@@ -12,7 +12,7 @@ const About: React.FC = () => {
 		{
 			title: 'Who Am I?',
 			content: [
-				{ title: 'Names', icon: FaSignature, content: ['Sadie', 'Scarlett', 'Skye'] },
+				{ title: 'Names', icon: FaSignature, content: ['Amelia', 'Scarlett', 'Skye'] },
 				{ title: 'Pronouns', icon: FaTags, content: ['She', 'They'], joinKey: '/' },
 				{ title: 'Attraction Layer Cake', icon: FaLayerGroup, content: ['rC5'], joinKey: '' }
 			]
@@ -31,7 +31,7 @@ const About: React.FC = () => {
 	return (
 		<>
 			<Head>
-				<title>Sadie Mae Katherine</title>
+				<title>Amelia Mae Katherine</title>
 				<meta name="description" content={desc} />
 			</Head>
 
@@ -48,6 +48,6 @@ const About: React.FC = () => {
 			<Skills />
 		</>
 	);
-}
+};
 
 export default About;

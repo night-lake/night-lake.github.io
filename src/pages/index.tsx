@@ -6,7 +6,7 @@ import SeeMore from '../components/SeeMore';
 import Skills from '../components/Skills';
 import { desc, projects } from '../lib/constants';
 import { getAllPostIds, getSortedPostsData } from '../lib/posts';
-import {  MarkdownData, ProjectData } from '../lib/types';
+import { MarkdownData, ProjectData } from '../lib/types';
 
 export const getStaticProps = async () => {
 	return {
@@ -42,7 +42,7 @@ const Home: React.FC<{
 	return (
 		<>
 			<Head>
-				<title>Sadie Mae Katherine</title>
+				<title>Amelia Mae Katherine</title>
 				<meta name="description" content={desc} />
 			</Head>
 

@@ -23,7 +23,7 @@ const Projects: React.FC<{
 	return (
 		<>
 			<Head>
-				<title>Sadie&#39;s Projects</title>
+				<title>Amelia&#39;s Projects</title>
 				<meta
 					name="description"
 					content="Everything I've made, ranging from random web experiments to full blown full stack apps. Nevermind about the second part."
