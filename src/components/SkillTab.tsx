@@ -30,6 +30,11 @@ const SkillTab: React.FC<
 			>
 				{props.title}
 			</p>
+			<hr
+				className={classNames('border-2 w-full rounded-md group-hover:border-pink-500', {
+					'border-pink-600': props.title.toLowerCase() === props.get
+				})}
+			></hr>
 		</button>
 	);
 };

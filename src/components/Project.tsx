@@ -5,7 +5,7 @@ const Project: React.FC<{
 	project: ProjectData;
 }> = ({ project }) => {
 	return (
-		<li className="flex flex-col content-center rounded-xl bg-white p-2 transition-all dark:bg-neutral-800/90">
+		<li className="flex cursor-pointer flex-col content-center rounded-xl bg-slate-100/80 p-2 shadow-md transition-all hover:shadow-xl dark:bg-neutral-900/80">
 			<div className="m-auto">
 				<img className="h-48 w-48 rounded-full" alt="" src={project.icon} />
 			</div>

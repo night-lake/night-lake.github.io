@@ -49,50 +49,52 @@ const Footer: React.FC = () => {
 	});
 
 	return (
-		<footer>
-			{showDiscord && (
-				<p className="pt-3 text-center font-semibold text-gray-700 dark:text-gray-300">nightlake#3370</p>
-			)}
-			<div className="flex flex-row flex-wrap justify-center space-x-4 py-4 align-middle">
-				{links.map(link => {
-					return link.url ? (
-						<a href={link.url} key={link.sort}>
-							<link.icon title={link.sort} className={classname} />
+		<div className="mx-auto max-w-4xl px-4">
+			<footer>
+				{showDiscord && (
+					<p className="pt-3 text-center font-semibold text-gray-700 dark:text-gray-300">nightlake#3370</p>
+				)}
+				<div className="flex flex-row flex-wrap justify-center space-x-4 py-4 align-middle">
+					{links.map(link => {
+						return link.url ? (
+							<a href={link.url} key={link.sort}>
+								<link.icon title={link.sort} className={classname} />
+							</a>
+						) : (
+							<button onClick={link.action} key={link.sort}>
+								<link.icon title={link.sort} className={classname} />
+							</button>
+						);
+					})}
+				</div>
+				<div className="flex flex-row content-center justify-between pb-3">
+					<p className="text-center font-semibold text-gray-700 dark:text-gray-300">
+						&copy; Amelia Mae Katherine {format(Date.now(), 'yyyy')}.{' '}
+						<a
+							href="https://github.com/night-lake/night-lake.github.io"
+							className="font-bold text-pink-500 hover:text-pink-600"
+						>
+							View source.
 						</a>
-					) : (
-						<button onClick={link.action} key={link.sort}>
-							<link.icon title={link.sort} className={classname} />
-						</button>
-					);
-				})}
-			</div>
-			<div className="flex flex-row content-center justify-between pb-3">
-				<p className="text-center font-semibold text-gray-700 dark:text-gray-300">
-					&copy; Amelia Mae Katherine {format(Date.now(), 'yyyy')}.{' '}
-					<a
-						href="https://github.com/night-lake/night-lake.github.io"
-						className="font-bold text-pink-500 hover:text-pink-600"
-					>
-						View source.
-					</a>
-				</p>
-				<button onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
-					{resolvedTheme === 'dark' ? (
-						<FaMoon
-							className={
-								'cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300'
-							}
-						/>
-					) : (
-						<FaSun
-							className={
-								'cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300'
-							}
-						/>
-					)}
-				</button>
-			</div>
-		</footer>
+					</p>
+					<button onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
+						{resolvedTheme === 'dark' ? (
+							<FaMoon
+								className={
+									'cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300'
+								}
+							/>
+						) : (
+							<FaSun
+								className={
+									'cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300'
+								}
+							/>
+						)}
+					</button>
+				</div>
+			</footer>
+		</div>
 	);
 };
 

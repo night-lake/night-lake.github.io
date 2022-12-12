@@ -6,7 +6,7 @@ const Post: React.FC<{
 	post: MarkdownData;
 }> = ({ post }) => {
 	return (
-		<ul className="rounded-xl bg-white p-2 transition-all hover:shadow-md dark:bg-neutral-800/80 dark:shadow-lg">
+		<ul className="rounded-xl bg-slate-100/80 p-2 shadow-md transition-all hover:shadow-lg dark:bg-neutral-900/80 dark:shadow-lg">
 			<Link href={`/blog/${post.id}`} passHref>
 				<a>
 					<h3 className="text-lg font-bold text-pink-500">{post.postTitle}</h3>

@@ -15,13 +15,13 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 			<div className="bg-[#55cdfc]">
 				<div className="trans mx-auto h-2 max-w-4xl px-4"></div>
 			</div>
-			<div className="mx-auto max-w-4xl px-4">
-				<Header />
-				<main>
+			<Header />
+			<div className="bg-white dark:bg-neutral-800/80">
+				<main className="mx-auto max-w-4xl px-4 py-5">
 					<Component {...pageProps} />
 				</main>
-				<Footer />
 			</div>
+			<Footer />
 		</ThemeProvider>
 	);
 };
