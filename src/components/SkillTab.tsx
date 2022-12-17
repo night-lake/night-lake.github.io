@@ -25,14 +25,15 @@ const SkillTab: React.FC<
 			<p
 				className={classNames('font-medium transition-all group-hover:text-pink-500', {
 					'text-gray-600 dark:text-gray-300': props.title.toLowerCase() !== props.get,
-					'text-pink-600': props.title.toLowerCase() === props.get
+					'text-pink-600 font-semibold': props.title.toLowerCase() === props.get
 				})}
 			>
 				{props.title}
 			</p>
 			<hr
-				className={classNames('border-2 w-full rounded-md group-hover:border-pink-500', {
-					'border-pink-600': props.title.toLowerCase() === props.get
+				className={classNames('w-full rounded-md border-2 group-hover:border-pink-500', {
+					'border-pink-600': props.title.toLowerCase() === props.get,
+					'border-slate-100/80': props.title.toLowerCase() !== props.get
 				})}
 			></hr>
 		</button>

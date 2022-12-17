@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import GoBack from '../components/GoBack';
 import Section from '../components/Section';
 
 const Error: React.FC = () => {
@@ -9,9 +8,7 @@ const Error: React.FC = () => {
 				<title>Amelia Mae Katherine</title>
 			</Head>
 
-			<GoBack />
-
-			<Section title="Well...." topMargin={true}>
+			<Section title="Well....">
 				<p className="text-lg dark:text-white">
 					It seems like an <a href="https://ian-deploy.xyz">Ian Deploy</a> has infilterated.
 				</p>

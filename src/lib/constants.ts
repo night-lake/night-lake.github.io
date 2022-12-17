@@ -24,7 +24,7 @@ export const projects: ProjectData[] = [
 		description: 'I too love recursion.',
 		website: 'https://sadie.is-a.dev/',
 		repo: 'https://github.com/night-lake/night-lake.github.io',
-		icon: 'https://us-east-1.tixte.net/uploads/nightlake.tixte.co/sadie.png',
+		icon: 'https://us-east-1.tixte.net/uploads/nightlake.tixte.co/amelia.png',
 		tech: ['Next.js', 'TypeScript', 'TailwindCSS']
 	}
 ];

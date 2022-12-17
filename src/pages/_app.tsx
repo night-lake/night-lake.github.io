@@ -13,11 +13,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 				<meta name="theme-color" content="#FFAEBD" />
 			</Head>
 			<div className="bg-[#55cdfc]">
-				<div className="trans mx-auto h-2 max-w-4xl px-4"></div>
+				<div className="trans mx-auto h-2 max-w-6xl px-4"></div>
 			</div>
 			<Header />
 			<div className="bg-white dark:bg-neutral-800/80">
-				<main className="mx-auto max-w-4xl px-4 py-5">
+				<main className="mx-auto max-w-6xl py-4 px-2 md:px-0">
 					<Component {...pageProps} />
 				</main>
 			</div>

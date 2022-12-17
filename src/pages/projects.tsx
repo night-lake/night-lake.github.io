@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import GoBack from '../components/GoBack';
 import Project from '../components/Project';
 import Section from '../components/Section';
 import { projects } from '../lib/constants';
@@ -29,8 +28,6 @@ const Projects: React.FC<{
 					content="Everything I've made, ranging from random web experiments to full blown full stack apps. Nevermind about the second part."
 				/>
 			</Head>
-
-			<GoBack />
 
 			<Section title="Projects">
 				<ul className="grid gap-2 py-2 lg:grid-cols-2 xl:grid-cols-3">

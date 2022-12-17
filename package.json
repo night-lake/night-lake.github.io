@@ -9,8 +9,10 @@
     "deploy": "rm -rf node_modules/.cache && rm -rf docs && next build && next export && touch out/.nojekyll && touch out/CNAME && echo \"sadie.is-a.dev\" >> out/CNAME && mv out docs && git add docs/ && git commit -m \"Deploy Next.js to gh-pages\""
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.7",
     "@mdx-js/loader": "^2.1.0",
     "@next/mdx": "^12.1.0",
+    "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.2",
     "classnames": "^2.3.1",
@@ -24,6 +26,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "react-popper": "^2.3.0",
     "tailwindcss": "^3.0.23"
   },
   "devDependencies": {

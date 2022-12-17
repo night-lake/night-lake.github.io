@@ -3,7 +3,6 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import Head from 'next/head';
 import Date from '../../components/Date';
-import GoBack from '../../components/GoBack';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export const getStaticProps = async ({ params }: { params: { id: string; fileContents: string } }) => {
@@ -18,16 +17,16 @@ export const getStaticPaths: GetStaticPaths = () => {
 	};
 };
 
-const PostPage: React.FC<{ source: MDXRemoteSerializeResult<Record<string, unknown>> }> = ({ source }) =>{
+const PostPage: React.FC<{ source: MDXRemoteSerializeResult<Record<string, unknown>> }> = ({ source }) => {
 	return (
 		<>
 			<Head>
 				<title>{source.frontmatter?.postTitle}</title>
+				<meta name="description" content={source.frontmatter?.description} />
 			</Head>
-			<GoBack />
-			<section className="py-4">
-				<h1 className="text-2xl font-bold text-pink-500">{source.frontmatter?.postTitle}</h1>
-				<p className="mb-3 dark:text-white">{source.frontmatter?.description}</p>
+			<section className="mb-6">
+				<h1 className="pb-2 text-2xl font-bold text-pink-500">{source.frontmatter?.postTitle}</h1>
+				<p className="pb-2 dark:text-white">{source.frontmatter?.description}</p>
 				<p className="font-medium text-gray-600 dark:text-gray-400">
 					<Date dateString={source.frontmatter?.date ?? '1970-01-01'} />
 				</p>
@@ -37,6 +36,6 @@ const PostPage: React.FC<{ source: MDXRemoteSerializeResult<Record<string, unkno
 			</article>
 		</>
 	);
-}
+};
 
 export default PostPage;

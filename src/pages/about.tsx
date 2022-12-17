@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { FaGrinTongue, FaHeart, FaLayerGroup, FaSignature, FaTags, FaThumbsUp, FaUsers } from 'react-icons/fa';
 import ContentBlock from '../components/ContentBlock';
-import GoBack from '../components/GoBack';
 import ItemList from '../components/ItemList';
 import Skills from '../components/Skills';
 import { desc } from '../lib/constants';
@@ -34,8 +33,6 @@ const About: React.FC = () => {
 				<title>Amelia Mae Katherine</title>
 				<meta name="description" content={desc} />
 			</Head>
-
-			<GoBack />
 
 			{about.map(item => (
 				<ContentBlock title={item.title} key={item.title}>

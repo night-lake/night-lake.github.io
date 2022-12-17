@@ -1,21 +1,15 @@
-import classNames from 'classnames';
-
-const  Section: React.FC<{
+const Section: React.FC<{
 	title: string;
 	children: React.ReactNode;
-	topMargin?: boolean;
-}> = ({ title, children, topMargin = false }) => {
+	fontSize?: string;
+}> = ({ title, children, fontSize = 'text-xl' }) => {
 	return (
-		<section
-			className={classNames({
-				'mb-4': !topMargin,
-				'my-4': topMargin
-			})}
-		>
-			<h2 className="text-xl font-medium dark:text-white">{title}</h2>
+		<section className="my-4">
+			<h2 className={`${fontSize} font-bold dark:text-white`}>{title}</h2>
+			<hr className="w-10 rounded-md border-2 border-pink-600"></hr>
 			<div className="mt-4">{children}</div>
 		</section>
 	);
-}
+};
 
 export default Section;

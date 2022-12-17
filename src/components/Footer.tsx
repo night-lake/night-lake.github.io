@@ -6,6 +6,7 @@ import {
 	FaDiscord,
 	FaEnvelope,
 	FaGithub,
+	FaMastodon,
 	FaMoon,
 	FaReddit,
 	FaStackOverflow,
@@ -23,7 +24,7 @@ const Footer: React.FC = () => {
 
 	const links: IconData[] = [
 		{ icon: FaGithub, url: 'https://github.com/night-lake', sort: 'GitHub' },
-		{ icon: FaTwitter, url: 'https://twitter.com/_nightlake', sort: 'Twitter' },
+		{ icon: FaMastodon, url: 'https://tech.lgbt/@nightlake', sort: 'Twitter' },
 		{ icon: FaReddit, url: 'https://reddit.com/u/_nightlake', sort: 'Reddit' },
 		{ icon: FaYoutube, url: 'https://youtube.com/channel/UCrYQrKFiLyRoTKo0WEOlfzg', sort: 'Youtube' },
 		{ icon: FaEnvelope, url: 'mailto:sadiemk@fluorine.me', sort: 'Email' },
@@ -49,9 +50,9 @@ const Footer: React.FC = () => {
 	});
 
 	return (
-		<div className="mx-auto max-w-4xl px-4">
+		<div className="mx-auto max-w-6xl p-4 md:px-0">
 			<footer>
-				{showDiscord && (
+				{/* {showDiscord && (
 					<p className="pt-3 text-center font-semibold text-gray-700 dark:text-gray-300">nightlake#3370</p>
 				)}
 				<div className="flex flex-row flex-wrap justify-center space-x-4 py-4 align-middle">
@@ -66,8 +67,8 @@ const Footer: React.FC = () => {
 							</button>
 						);
 					})}
-				</div>
-				<div className="flex flex-row content-center justify-between pb-3">
+				</div> */}
+				<div className="flex flex-row content-center justify-between">
 					<p className="text-center font-semibold text-gray-700 dark:text-gray-300">
 						&copy; Amelia Mae Katherine {format(Date.now(), 'yyyy')}.{' '}
 						<a
