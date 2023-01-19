@@ -131,14 +131,14 @@ const Header: React.FC = () => {
 									/>
 								</form>
 
-								<ul className="flex w-full flex-col content-center justify-between gap-4 pb-2 align-middle">
+								<ul className="flex flex-col gap-4 pb-2 align-middle">
 									{links.map((link, index) => {
 										return (
-											<li key={index}>
+											<li key={index} className="w-full">
 												<Link href={link.url} passHref>
 													<a
 														className={classNames(
-															'text-md w-full rounded-md p-2 outline-2 outline-pink-500 transition-all',
+															'text-md rounded-md p-2 outline-2 outline-pink-500 transition-all',
 															{
 																'hover:bg-pink-500/30 hover:font-semibold':
 																	router.pathname.split('/')[0] !== link.url,

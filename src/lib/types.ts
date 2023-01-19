@@ -28,7 +28,7 @@ export interface IconData {
 	url?: string;
 	icon: IconType;
 	sort: string;
-	action?: MouseEventHandler<HTMLButtonElement>;
+	text: string;
 }
 
 export interface AboutData {

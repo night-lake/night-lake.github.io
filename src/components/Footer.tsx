@@ -11,7 +11,6 @@ import {
 	FaReddit,
 	FaStackOverflow,
 	FaSun,
-	FaTwitter,
 	FaYoutube
 } from 'react-icons/fa';
 import { IconData } from '../lib/types';
@@ -21,33 +20,6 @@ const Footer: React.FC = () => {
 
 	const [showDiscord, setDiscord] = useState(false);
 	let classname = 'cursor-pointer text-3xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300';
-
-	const links: IconData[] = [
-		{ icon: FaGithub, url: 'https://github.com/night-lake', sort: 'GitHub' },
-		{ icon: FaMastodon, url: 'https://tech.lgbt/@nightlake', sort: 'Twitter' },
-		{ icon: FaReddit, url: 'https://reddit.com/u/_nightlake', sort: 'Reddit' },
-		{ icon: FaYoutube, url: 'https://youtube.com/channel/UCrYQrKFiLyRoTKo0WEOlfzg', sort: 'Youtube' },
-		{ icon: FaEnvelope, url: 'mailto:sadiemk@fluorine.me', sort: 'Email' },
-		{ icon: FaCodepen, url: 'https://codepen.io/nightlake', sort: 'Codepen' },
-		{
-			icon: FaStackOverflow,
-			url: 'https://stackoverflow.com/users/12720379/sadie-katherine',
-			sort: 'StackOverflow'
-		},
-		{
-			icon: FaDiscord,
-			action: () => {
-				setDiscord(value => !value);
-			},
-			sort: 'Discord'
-		}
-	];
-
-	links.sort((a, b) => {
-		if (a.sort < b.sort) return -1;
-		if (a.sort > b.sort) return 1;
-		return 0;
-	});
 
 	return (
 		<div className="mx-auto max-w-6xl p-4 md:px-0">
@@ -78,21 +50,21 @@ const Footer: React.FC = () => {
 							View source.
 						</a>
 					</p>
-					<button onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
-						{resolvedTheme === 'dark' ? (
-							<FaMoon
-								className={
-									'cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300'
-								}
-							/>
-						) : (
-							<FaSun
-								className={
-									'cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300'
-								}
-							/>
-						)}
-					</button>
+					<div className="flex flex-row content-center justify-between gap-3">
+						<a href="https://tech.lgbt/@nightlake" rel="me">
+							<FaMastodon className="cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300" />
+						</a>
+						<a href="https://github.com/night-lake" rel="me">
+							<FaGithub className="cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300" />
+						</a>
+						<button onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
+							{resolvedTheme === 'dark' ? (
+								<FaMoon className="cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300" />
+							) : (
+								<FaSun className="cursor-pointer text-2xl text-gray-600 transition-all hover:text-pink-600 dark:text-gray-300" />
+							)}
+						</button>
+					</div>
 				</div>
 			</footer>
 		</div>
