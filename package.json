@@ -1,14 +1,20 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "nuxt": "^3.4.0"
-  }
+	"name": "amelia-katherine",
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"devDependencies": {
+		"@catppuccin/tailwindcss": "^0.1.1",
+		"nuxt": "^3.4.0",
+		"nuxt-icon": "^0.3.3"
+	},
+	"dependencies": {
+		"@nuxtjs/tailwindcss": "^6.6.6",
+		"@tailwindcss/typography": "^0.5.9"
+	}
 }
