@@ -1,13 +1,5 @@
 <template>
-	<div class="flex flex-row items-center gap-3">
-		<img alt="" :src="me.avatar" class="rounded-full h-24 w-24" />
-
-		<div class="flex flex-col gap-2 justify-center">
-			<h1 class="text-pink -mb-4">{{ me.fullName }}</h1>
-			<p class="text-surface-2">@{{ me.username }}</p>
-		</div>
-	</div>
-
+	<h2>pronouns</h2>
 	<div class="mt-4 flex flex-row items-center gap-3">
 		<span class="font-semibold">icon key: </span>
 
