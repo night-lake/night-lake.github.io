@@ -5,6 +5,7 @@ import { useState, Fragment } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Popover, Transition } from '@headlessui/react';
 import { usePopper } from 'react-popper';
+import Logo from './Logo';
 
 const links = [
 	{
@@ -40,7 +41,10 @@ const Header: React.FC = () => {
 						{/* desktop header */}
 						<nav className="hidden flex-row content-center justify-between align-middle md:flex">
 							<Link href="/" passHref>
-								<a className="p-2 text-xl font-extrabold text-pink-600">Amelia Mae Katherine</a>
+								<a className="flex flex-row gap-4 p-2 text-xl font-extrabold text-pink-600">
+									<Logo />
+									<p className="my-auto">Amelia Mae Katherine</p>
+								</a>
 							</Link>
 
 							<nav className="flex flex-row content-center justify-between align-middle">
@@ -48,12 +52,15 @@ const Header: React.FC = () => {
 									return (
 										<Link key={index} href={link.url} passHref>
 											<a
-												className={classNames('text-md mx-1 rounded-md p-2 transition-all', {
-													'hover:bg-pink-500/30 hover:font-semibold':
-														router.pathname.split('/')[0] !== link.url,
-													'bg-pink-500/60 font-bold':
-														router.pathname.split('/')[0] === link.url
-												})}
+												className={classNames(
+													'text-md mx-1 my-auto rounded-md p-2 transition-all',
+													{
+														'hover:bg-pink-500/30 hover:font-semibold':
+															router.pathname.split('/')[0] !== link.url,
+														'bg-pink-500/60 font-bold':
+															router.pathname.split('/')[0] === link.url
+													}
+												)}
 											>
 												{link.name}
 											</a>
@@ -63,7 +70,7 @@ const Header: React.FC = () => {
 							</nav>
 
 							<form
-								className="rounded-md"
+								className="my-auto rounded-md"
 								onSubmit={event => {
 									event.preventDefault();
 									router.replace(`https://duckduckgo.com/?q=site:sadie.is-a.dev+${search}`);
@@ -83,7 +90,10 @@ const Header: React.FC = () => {
 						{/* mobile header */}
 						<nav className="flex flex-row content-center justify-between align-middle md:hidden">
 							<Link href="/" passHref>
-								<a className="p-2 text-xl font-extrabold text-pink-600">Amelia Mae Katherine</a>
+								<a className="p-2 text-xl font-extrabold text-pink-600">
+									<Logo />
+									Amelia Mae Katherine
+								</a>
 							</Link>
 
 							<Popover.Button

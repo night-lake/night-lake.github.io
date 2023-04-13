@@ -31,7 +31,7 @@ const PostPage: React.FC<{ source: MDXRemoteSerializeResult<Record<string, unkno
 					<Date dateString={source.frontmatter?.date ?? '1970-01-01'} />
 				</p>
 			</section>
-			<article className="prose max-w-5xl dark:prose-invert">
+			<article className="ppink dark:ppink-invert max-w-5xl">
 				<MDXRemote {...source} />
 			</article>
 		</>

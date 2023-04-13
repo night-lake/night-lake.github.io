@@ -1,4 +1,3 @@
-import { MouseEventHandler } from 'react';
 import { IconType } from 'react-icons/lib';
 
 // Markdown Objects

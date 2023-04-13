@@ -1,8 +1,4 @@
-import classNames from 'classnames';
-import { link } from 'fs';
 import Head from 'next/head';
-import { FaEnvelope, FaStackOverflow } from 'react-icons/fa';
-import { SiCodepen, SiDiscord, SiGithub, SiMastodon, SiMatrix, SiReddit, SiYoutube } from 'react-icons/si';
 import Post from '../components/Post';
 import Project from '../components/Project';
 import Section from '../components/Section';
@@ -10,7 +6,7 @@ import SeeMore from '../components/SeeMore';
 import Skills from '../components/Skills';
 import { desc, projects } from '../lib/constants';
 import { getSortedPostsData } from '../lib/posts';
-import { IconData, MarkdownData, ProjectData } from '../lib/types';
+import { MarkdownData, ProjectData } from '../lib/types';
 
 export const getStaticProps = async () => {
 	return {
