@@ -1,6 +1,7 @@
 <template>
-	<h2>pronouns</h2>
-	<div class="mt-4 flex flex-row items-center gap-3">
+	<h1>pronouns</h1>
+
+	<div class="mb-4 flex flex-row items-center gap-3">
 		<span class="font-semibold">icon key: </span>
 
 		<Icon name="ic:round-favorite" size="24" class="text-pink" />
@@ -28,7 +29,7 @@
 		<span>nope</span>
 	</div>
 
-	<div class="grid grid-cols-1 md:grid-cols-3">
+	<div class="grid grid-cols-1 md:grid-cols-3 mb-4">
 		<div>
 			<h2>names</h2>
 			<PronounListing
@@ -56,7 +57,7 @@
 				<img
 					alt=""
 					:src="flag.flagURI"
-					class="my-0 h-7 w-16 rounded-md"
+					class="my-0 w-16 h-9 aspect-video rounded-md"
 				/>
 				<span>{{ flag.name }}</span>
 			</div>
@@ -65,7 +66,7 @@
 
 	<h2 class="my-none mb-1">words</h2>
 
-	<div class="grid grid-cols-1 md:grid-cols-4">
+	<div class="grid grid-cols-1 md:grid-cols-4 mb-2">
 		<div v-for="section in me.words" :key="section.header">
 			<h3>{{ section.header }}</h3>
 			<PronounListing

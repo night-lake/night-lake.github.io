@@ -19,10 +19,18 @@ export interface IdentityListing {
 	flagURI: string;
 }
 
-export interface WordsListing {
+export interface ListingSection {
 	header: string;
 	values: PronounsListing[];
 }
 
 export const ROOT_CDN_URI =
 	"https://us-east-1.tixte.net/uploads/nightlake.tixte.co";
+
+export interface Project {
+	name: string;
+	desc: string;
+	website?: string;
+	repo: string;
+	stack: string[];
+}

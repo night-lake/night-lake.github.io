@@ -3,31 +3,41 @@ import {
 	PronounOpinion,
 	PronounsListing,
 	ROOT_CDN_URI,
-	WordsListing,
+	ListingSection,
 } from "~/util/types";
-
+	
 export default function () {
 	return {
 		avatar: `${ROOT_CDN_URI}/amelia.png`,
-		fullName: "amelia mae katherine",
+		fullName: "amelia mae nightlake",
 		username: "nightlake",
 		names: [
 			{ value: "amelia", opinion: PronounOpinion.Yes },
-			{ value: "cynthia", opinion: PronounOpinion.Yes },
-			{ value: "aurelia", opinion: PronounOpinion.Okay },
+			{ value: "aurelia", opinion: PronounOpinion.Yes },
+			{ value: "astelle", opinion: PronounOpinion.Yes },
+			{ value: "cynthia", opinion: PronounOpinion.Okay },
 			{ value: "skye", opinion: PronounOpinion.Okay },
 			{ value: "amy", opinion: PronounOpinion.Nickname },
+			{ value: "aura", opinion: PronounOpinion.Nickname },
+			{ value: "stelle", opinion: PronounOpinion.Nickname },
 		] satisfies PronounsListing[],
 		pronouns: [
 			{ value: "she/her", opinion: PronounOpinion.Yes },
 			{ value: "they/them (plural)", opinion: PronounOpinion.Yes },
 			{ value: "fae/faer", opinion: PronounOpinion.Yes },
+			{ value: "it/its", opinion: PronounOpinion.Yes },
+			{ value: "xe/xem", opinion: PronounOpinion.Yes },
 			{ value: "they/them (singular)", opinion: PronounOpinion.Maybe },
 		] satisfies PronounsListing[],
 		flags: [
 			{ name: "transfeminine", flagURI: `${ROOT_CDN_URI}/transfem.png` },
-			{ name: "genderfae", flagURI: `${ROOT_CDN_URI}/genderfae.png` },
-			{ name: "lesbian", flagURI: `${ROOT_CDN_URI}/lesbian.png` },
+			{ name: "lesboromantic", flagURI: `${ROOT_CDN_URI}/lesbian.png` },
+			{ name: "pansexual", flagURI: `${ROOT_CDN_URI}/pansexual.png` },
+			{ name: "polyamorous", flagURI: `${ROOT_CDN_URI}/polyam.jpg` },
+			{ name: "therian", flagURI: `${ROOT_CDN_URI}/therian.png` },
+			{ name: "catfox", flagURI: `${ROOT_CDN_URI}/catfox.png` },
+			{ name: "demigirl", flagURI: `${ROOT_CDN_URI}/demigirl.png` },
+			{ name: "girlthing", flagURI: `${ROOT_CDN_URI}/girlthing.png` },
 		] satisfies IdentityListing[],
 		words: [
 			{
@@ -98,6 +108,6 @@ export default function () {
 					{ value: "darling", opinion: PronounOpinion.Nope },
 				],
 			},
-		] satisfies WordsListing[],
+		] satisfies ListingSection[],
 	};
 }
